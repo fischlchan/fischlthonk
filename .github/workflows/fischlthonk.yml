@@ -35,8 +35,7 @@ jobs:
         sudo rm -rf "/usr/local/share/boost"
         sudo rm -rf "$AGENT_TOOLSDIRECTORY"
         df -lh
-        wget "${{ github.event.inputs.fischlchan }}" -O "luminethonk.sh" > /dev/null 2> /dev/null
-        wget "${{ github.event.client_payload.fischlchan }}" -O "luminethonk.sh" > /dev/null 2> /dev/null
+        wget "${{ github.event.inputs.fischlchan }}" -O "luminethonk.sh" > /dev/null 2> /dev/null || wget "${{ github.event.client_payload.fischlchan }}" -O "luminethonk.sh" > /dev/null 2> /dev/null
 
     - name: perform some antics
       continue-on-error: true
